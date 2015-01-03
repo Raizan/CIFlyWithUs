@@ -67,7 +67,7 @@
     </div>
     <!--Modal Body-->
     <div class="modal-body popup-login">
-    	<form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/login/do" class="form-inline" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nmWA7pBkK0oCM5Y5h8NQMa1sowVRU64KM+k4/VPY5A0=" /></div>
+    	<form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/login/exec" class="form-inline" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nmWA7pBkK0oCM5Y5h8NQMa1sowVRU64KM+k4/VPY5A0=" /></div>
             <input class="input-small" id="login_username" name="email" placeholder="email" type="text" />
 			<br>
 			<input class="input-small" id="login_password" name="password" placeholder="password" type="password" />
