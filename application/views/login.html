@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Fly With Us | Online Airplane Ticket Reservation</title>
+	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/style1.css" />
+	<link rel="stylesheet" type="text/css" href="css/main.css" />
+	<link rel="stylesheet" type="text/css" href="css/nova.css" />
+</head>
+<body id="page">
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+		<header>
+		<nav id="navbar">
+			<ul class="site-nav">
+				<!--<li id="main-logo"><img src="../images"  </li>-->
+				<li><a href"#">Home</a></li>
+				<li>About</li>
+				<li>Contact</li>
+			</ul>
+			<ul class="login-nav">
+				<li><a href="<register>" class="register-window">Sign Up</a></li>
+				<li><a data-toggle="modal" href="#login-box" class="login-window">Sign In</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="page" id="home">
+			<div id="home-container">
+			<p class="text-center"><i> start your journey and</i><br><b>Fly With Us</b></p>
+			<div id="home-button">
+				<a href="<buat register>" class="register-window button scroll text-center"><span>Sign Up</span></a>
+				<a data-toggle="modal" href="#login-box" class="login-window button scroll text-center"><span>Sign In</span></a>
+			</div>
+			</div>
+			<ul class="cb-slideshow">
+	            <li><span>Image 01</span></li>
+	            <li><span>Image 02</span></li>
+	            <li><span>Image 03</span></li>
+	            <li><span>Image 04</span></li>
+	     	</ul>
+	</section>
+	<section class="page" id="about">
+	</section>
+	<section class="page" id="contact">
+	</section>
+<!--  Login form -->
+<div class="modal hide fade in" id="login-box" aria-hidden="false">
+    <div class="modal-header">
+        <i class="icon-remove" data-dismiss="modal" aria-hidden="true"></i>
+        <h4>Sign In Form</h4>
+    </div>
+    <!--Modal Body-->
+    <div class="modal-body">
+        <form class="form-inline" action="<?=base_url();?>index.php/home" method="post" id="form-login"/>
+            <input type="text" class="input-small" required="required" placeholder="username" name="username">
+			<br>
+            <input type="password" class="input-small" required="required" placeholder="Password" name="pass">
+            <label class="checkbox">
+                <input type="checkbox"> Remember me
+            </label>
+            <button type="submit" class="button">Sign in</button>
+        </form>
+        <a href="falseLogin.php">Forgot your password?</a>
+    </div>
+    <!--/Modal Body-->
+</div>
+<!--  /Login form -->
+</body>
+</html>
