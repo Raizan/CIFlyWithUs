@@ -7,8 +7,6 @@
 <link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/reserve.css?body=1" media="all" rel="stylesheet" />
 <link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/application.css?body=1" media="all" rel="stylesheet" />
 
-  <meta content="authenticity_token" name="csrf-param" />
-<meta content="nmWA7pBkK0oCM5Y5h8NQMa1sowVRU64KM+k4/VPY5A0=" name="csrf-token" />
 </head>
 <body>
 
@@ -39,73 +37,78 @@
 
 	<section class="navbar-down ">
 		<h1 class="font">Create <b class="font-yellow">an</b> Account</h1>
-		<form class="form-horizontal" method="post">
-        <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/register/create" class="form-horizontal" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nmWA7pBkK0oCM5Y5h8NQMa1sowVRU64KM+k4/VPY5A0=" /></div>
-		<!--<form class="form-horizontal">-->
+        <form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/register/create" class="form-horizontal" method="post">
 			<fieldset>
 			<!-- Text input-->
 			<div class="control-group">
-                <label class="control-label" for="register_nama_lengkap">Nama lengkap</label>
+                <label value="<?php echo set_value('nama'); ?>" class="control-label" for="nama_lengkap">Nama lengkap</label>
 			  <!--<label class="control-label" for="nama">Nama Lengkap</label>-->
 			  <div class="controls">
-			  	  <input class="input-xlarge" id="register_nama_lengkap" name="nama" placeholder="Nabila" type="text" />
+			  	  <input class="input-xlarge" id="nama_lengkap" name="nama" placeholder="Nabila" type="text" required=""/>
+				  <?php echo form_error('nama'); ?>
 			  </div>
 			</div>
 
 			<!-- Text input-->
 			<div class="control-group">
-                <label class="control-label" for="register_alamat">Alamat</label>
+                <label class="control-label" for="alamat">Alamat</label>
 			  <div class="controls">
-			  	  <input class="input-xlarge" id="register_alamat" name="alamat" type="text" />
+			  	  <input value="<?php echo set_value('alamat'); ?>" class="input-xlarge" id="alamat" name="alamat" type="text" required=""/>
+				  <?php echo form_error('alamat'); ?>
 			  </div>
 			</div>
 
 			<!-- Text input-->
 			<div class="control-group">
-                <label class="control-label" for="register_email">Email</label>
+                <label class="control-label" for="email">Email</label>
 			  <div class="controls">
-			  	  <input class="input-xlarge" id="register_email" name="email" type="text" />
+			  	  <input value="<?php echo set_value('email'); ?>" class="input-xlarge" id="email" name="email" type="text" required=""/>
+				  <?php echo form_error('email'); ?>
 			  </div>
 			</div>
 
 			<!-- Password input-->
 			<div class="control-group">
-                <label class="control-label" for="register_password">Password</label>
+                <label class="control-label" for="password">Password</label>
 			  <div class="controls">
-			  	  <input class="input-xlarge" id="register_password" name="password" type="password" />
+			  	  <input class="input-xlarge" id="password" name="password" type="password" required=""/>
 			    <p class="help-block">Minimal 8 karakter alfanumerik</p>
+				<?php echo form_error('password'); ?>
 			  </div>
 			</div>
 
 			<!-- Password input-->
 			<div class="control-group">
-                <label class="control-label" for="register_konfirmasi_password">Konfirmasi password</label>
+                <label class="control-label" for="konfirmasi_password">Konfirmasi password</label>
 			  <!--<label class="control-label" for="konfirmasi_password">Konfirmasi Password</label>-->
 			  <div class="controls">
-			      <input class="input-xlarge" id="register_konfirmasi_password" name="konfirmasi_password" type="password" />
+			      <input class="input-xlarge" id="konfirmasi_password" name="konfirmasi_password" type="password" required=""/>
+				  <?php echo form_error('konfirmasi_password'); ?>
 			  </div>
 			</div>
 
 			<!-- Text input-->
 			<div class="control-group">
-                <label class="control-label" for="register_nomor_identitas">Nomor identitas</label>
+                <label class="control-label" for="nomor_identitas">Nomor identitas</label>
 			  <div class="controls">
-			  	  <input class="input-xlarge" id="register_nomor_identitas" name="nomor_identitas" type="text" />
+			  	  <input value="<?php echo set_value('nomor_identitas'); ?>" class="input-xlarge" id="nomor_identitas" name="nomor_identitas" type="text" required=""/>
 			    <p class="help-block">KTP / Kartu Pelajar / Kartu SIM / Paspor</p>
+				  <?php echo form_error('nomor_identitas'); ?>
 			  </div>
 			</div>
 
 			<!-- Text input-->
 			<div class="control-group">
-                <label class="control-label" for="register_nomor_telepon">Nomor telepon</label>
+                <label class="control-label" for="nomor_telepon">Nomor telepon</label>
 			  <div class="controls">
-			  	  <input class="input-xlarge" id="register_nomor_telepon" name="nomor_telepon" type="text" />
+			  	  <input value="<?php echo set_value('nomor_telepon'); ?>" class="input-xlarge" id="nomor_telepon" name="nomor_telepon" type="text" required=""/>
+				  <?php echo form_error('nomor_telepon'); ?>
 			  </div>
 			</div>
 
 			<!-- Button -->
 			<div class="control-group">
-                <label class="control-label" for="register_submit">Submit</label>
+                <label class="control-label" for="submit">Submit</label>
 			  <div class="controls">
 			  	  <input class="button" name="commit" type="submit" value="submit" />
 			  </div>

@@ -8,10 +8,9 @@ class Register extends CI_Controller {
     }
 
     function index(){
-        error_reporting(E_ALL);
         $this->load->view('register');
     }
-    // is_unique ganti dengan checkuser function pg
+
     function create(){
         $this->load->library('form_validation');
         $this->form_validation->set_message('required', '%s is required');
@@ -19,7 +18,7 @@ class Register extends CI_Controller {
         $this->form_validation->set_message('matches', 'Confirmation does not match with password');
         $this->form_validation->set_message('min_length', '%s: Minimum %s characters');
         $this->form_validation->set_message('max_length', '%s: Maximum %s characters');
-        //$this->form_validation->set_message('is_unique', 'Email already in use');
+        $this->form_validation->set_message('is_unique', 'Email already in use');
         $this->form_validation->set_message('password_check', 'Must contain characters and numbers');
         $this->form_validation->set_message('email_check', 'Email already in use');
         $this->form_validation->set_message('numeric', 'Must contain only numbers');
@@ -34,7 +33,6 @@ class Register extends CI_Controller {
         $this->form_validation->set_rules('nomor_identitas','Nomor Identitas','required|numeric');
         $this->form_validation->set_rules('nomor_telepon','Nomor Telepon','required|numeric|min_length[6]|max_length[12]');
 
-        // nama, alamat, email, password, konfirmasi_password, nomor_identitas, nomor_telepon
         // cek apakah form telah diisi (rule telah terpenuhi?)
         if ($this->form_validation->run() == FALSE) {
             $this->load->view('register');
