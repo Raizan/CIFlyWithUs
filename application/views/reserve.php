@@ -2,20 +2,20 @@
 <html>
 <head>
 	<title>Fly With Us | Online Airplane Ticket Reservation</title>
-	<link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="css/style1.css" />
-	<link rel="stylesheet" type="text/css" href="css/main.css" />
-	<link rel="stylesheet" type="text/css" href="css/chosen.css" />
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css" />
-	<link rel="stylesheet" type="text/css" href="css/jquery-ui.structure.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/style1.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/main.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/chosen.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/jquery-ui.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/jquery-ui.structure.css" />
 </head>
 <body id="page" class="white x-hidden">
-	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
-	<script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/main.js"></script>
-	<script type="text/javascript" src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>
-	<script type="text/javascript" src="js/chosen.jquery.js"></script>
-	<script type="text/javascript" src="js/jquery-ui.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/main.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/chosen.jquery.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/jquery-ui.js"></script>
 		<header>
 		<nav id="navbar">
 			<ul class="site-nav">
@@ -32,6 +32,7 @@
 	<section class="navbar-down">
 		<div class="center">
 			<h3 class="font title-font"><b class="font-yellow">Reserve</b> Airplane Ticket</h3>
+			<!-- Form untuk apa ini? -->
 			<form>
 				<ul id="search-table">
 				<li class="search-col">
