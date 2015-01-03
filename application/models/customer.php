@@ -24,12 +24,15 @@ class Customer extends CI_Model {
 
         if ($auth->num_rows() > 0)
         {
-            $row = $auth->first_row('nama_customer');
-            //$row
-            return true;
+            $row = $auth->row();
+            $data["nama_customer"] = $row->nama_customer;
+            $data["auth"] = true;
+            return $data;
         }
-        else
-            return false;
+        else {
+            $data["auth"] = false;
+            return $data;
+        }
     }
 
     function email_check($email){

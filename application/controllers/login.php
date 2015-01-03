@@ -8,7 +8,7 @@ class Login extends CI_Controller {
     }
 
     function index(){
-        $this->load->view('login.php');
+        $this->load->view('login');
     }
 
     function authorize(){
@@ -16,16 +16,21 @@ class Login extends CI_Controller {
 		$password = $this->input->post('password');
 
 		$auth = $this->customer->authorize($email, $password);
-        if ($auth == true){
+        if ($auth["auth"] == true){
             $data = array(
                 'email' => $email,
+                'nama' => $auth["nama_customer"],
                 'login' => TRUE
             );
 
             $this->session->set_userdata($data);
+            $this->load->view('login');
+            redirect('search');
         }
         else {
-
+            //gagal login
+            $this->session->set_flashdata('pesan', 'Username atau password Anda salah!');
+            redirect('login');
         }
     }
 

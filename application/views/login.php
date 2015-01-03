@@ -1,25 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FlyWithUs</title>
-  <link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/login.css?body=1" media="all" rel="stylesheet" />
-<link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/register.css?body=1" media="all" rel="stylesheet" />
-<link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/reserve.css?body=1" media="all" rel="stylesheet" />
-<link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/application.css?body=1" media="all" rel="stylesheet" />
-
-  <meta content="authenticity_token" name="csrf-param" />
-<meta content="nmWA7pBkK0oCM5Y5h8NQMa1sowVRU64KM+k4/VPY5A0=" name="csrf-token" />
-</head>
-<body>
-
-<!DOCTYPE html>
-<html>
-<head>
 	<title>Fly With Us | Online Airplane Ticket Reservation</title>
 	<link href="<?php echo base_url();?>assets/stylesheets/main.css?body=1" media="screen" rel="stylesheet" />
 	<link href="<?php echo base_url();?>assets/stylesheets/nova.css?body=1" media="screen" rel="stylesheet" />
 	<link href="<?php echo base_url();?>assets/stylesheets/style1.css?body=1" media="screen" rel="stylesheet" />
 	<link href="<?php echo base_url();?>assets/stylesheets/font-awesome.min.css?body=1" media="screen" rel="stylesheet" />
+	<script>
+		<?php
+		$temp = $this->session->flashdata('pesan');
+		if ($temp != null){
+			$alert = 'alert('.'\''.$temp.'\''.');';
+			echo $alert;
+		}
+		?>
+	</script>
 </head>
 <body id="page">
 	<script src="<?php echo base_url();?>assets/javascripts/jquery-1.11.2.js?body=1"></script>
@@ -68,9 +63,9 @@
     <!--Modal Body-->
     <div class="modal-body popup-login">
     	<form accept-charset="UTF-8" action="<?php echo base_url();?>index.php/login/authorize" class="form-inline" method="post"><div style="display:none"><input name="utf8" type="hidden" value="&#x2713;" /><input name="authenticity_token" type="hidden" value="nmWA7pBkK0oCM5Y5h8NQMa1sowVRU64KM+k4/VPY5A0=" /></div>
-            <input class="input-small" id="login_username" name="email" placeholder="email" type="text" />
+            <input class="input-small" id="login_username" name="email" placeholder="email" type="text" required="" />
 			<br>
-			<input class="input-small" id="login_password" name="password" placeholder="password" type="password" />
+			<input class="input-small" id="login_password" name="password" placeholder="password" type="password" required=""/>
       		<input class="button" name="commit" type="submit" value="submit" />
 </form>    </div>
     <!--/Modal Body-->
