@@ -19,15 +19,16 @@ class Register extends CI_Controller {
         $this->form_validation->set_message('matches', 'Confirmation does not match with password');
         $this->form_validation->set_message('min_length', '%s: Minimum %s characters');
         $this->form_validation->set_message('max_length', '%s: Maximum %s characters');
-        $this->form_validation->set_message('is_unique', 'Email already in use');
+        //$this->form_validation->set_message('is_unique', 'Email already in use');
         $this->form_validation->set_message('password_check', 'Must contain characters and numbers');
+        $this->form_validation->set_message('email_check', 'Email already in use');
         $this->form_validation->set_message('numeric', 'Must contain only numbers');
 
         $this->form_validation->set_error_delimiters('<p class="help-block" style="color:red">','</p>');
 
         $this->form_validation->set_rules('nama', 'Nama Lengkap', 'required');
         $this->form_validation->set_rules('alamat','Alamat','required|max_length[50]');
-        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]|is_unique[customer.email]');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[50]|callback_email_check');
         $this->form_validation->set_rules('password', 'Password', 'required|matches[konfirmasi_password]|min_length[8]|max_length[15]|callback_password_check');
         $this->form_validation->set_rules('konfirmasi_password','Konfirmasi Password','required|min_length[8]|max_length[15]');
         $this->form_validation->set_rules('nomor_identitas','Nomor Identitas','required|numeric');
@@ -61,11 +62,15 @@ class Register extends CI_Controller {
         }
     }
 
-    function password_check($str)
-    {
+    function password_check($str){
         if (preg_match('#[0-9]#', $str) && preg_match('#[a-zA-Z]#', $str)) {
             return TRUE;
         }
         return FALSE;
+    }
+
+    function email_check($str){
+        $query = $this->customer->email_check($str);
+        return $query;
     }
 }
