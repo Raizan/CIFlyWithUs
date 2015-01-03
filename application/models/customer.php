@@ -15,7 +15,23 @@ class Customer extends CI_Model {
         return $this->db->affected_rows() > 0;
     }
 
-    // use function
+    function authorize($email, $password){
+        $auth = $this->db->get_where('customer',
+            array(
+                'email' => $email,
+                'password' => $password
+            ));
+
+        if ($auth->num_rows() > 0)
+        {
+            $row = $auth->first_row('nama_customer');
+            //$row
+            return true;
+        }
+        else
+            return false;
+    }
+
     function email_check($email){
         $sql = 'SELECT'.' '.'checkuser('.'\''.$email.'\''.')';
         $query = $this->db->query($sql);
