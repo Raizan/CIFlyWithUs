@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>Fly With Us | Online Airplane Ticket Reservation</title>
+<<<<<<< HEAD
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/stylesheets/main.css"/>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/stylesheets/nova.css"/>
 	<link rel="stylesheet" href="<?php echo base_url();?>assets/stylesheets/style1.css"/>
@@ -10,6 +11,16 @@
 	<script src="<?php echo base_url(); ?>assets/javascripts/bootstrap.min.js"></script>
 	<script src="<?php echo base_url(); ?>assets/javascripts/main.js"></script>
 	<script src="<?php echo base_url(); ?>assets/javascripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+=======
+	<link rel="stylesheet" href="<?php echo base_url("assets/stylesheets/main.css");?>"/>
+	<link rel="stylesheet" href="<?php echo base_url("assets/stylesheets/nova.css");?>"/>
+	<link rel="stylesheet" href="<?php echo base_url("assets/stylesheets/style1.css");?>"/>
+	<link rel="stylesheet" href="<?php echo base_url("assets/stylesheets/font-awesome.css");?>"/>
+	<script src="<?php echo base_url("assets/javascripts/jquery-1.11.2.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/javascripts/bootstrap.min.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/javascripts/main.js"); ?>"></script>
+	<script src="<?php echo base_url("assets/javascripts/modernizr-2.6.2-respond-1.1.0.min.js"); ?>"></script>
+>>>>>>> 143ab8733e9ead54cd14813c58b97666dc791e92
 </head>
 <body id="page" class="long">
 				<header>
