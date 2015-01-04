@@ -3,11 +3,12 @@
 <head>
 	<title>Fly With Us | Online Airplane Ticket Reservation</title>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/font-awesome.min.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/style1.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/bootstrap.min.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/chosen.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/jquery-ui.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/jquery-ui.structure.css" />
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/js-webshim/minified/polyfiller.js"></script>
 	<script>
 		<?php
 		$temp = $this->session->flashdata('pesan');
@@ -25,18 +26,28 @@
 	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/chosen.jquery.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/jquery-ui.js"></script>
+	
+	
 		<header>
 		<nav id="navbar">
 			<ul class="site-nav">
 				<!--<li id="main-logo"><img src="../images"  </li>-->
 				<li><a href"#">Home</a></li>
-				<li>About</li>
-				<li><a href="<?php echo base_url();?>index.php/cart">Cart</a></li>
+				<li>Contact</li>
+				<li><a href="<?php echo base_url();?>index.php/search">Search</a></li>
 			</ul>
-			<ul class="login-nav">
-				<li>Welcome, <?php echo $this->session->userdata('nama'); ?></li>
-				<li><a href="<?php echo base_url(); ?>index.php/logout">Sign Out</a></li>
+			<div class="nav-collapse collapse">
+			<ul class="login-nav nav">
+				<li class="dropdown">
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" aria-expanded="false"><?php echo $this->session->userdata('nama'); ?><b class=" icon-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url();?>index.php/cart">Cart</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/cart/history">History</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/logout">Sign Out</a></li>
+                    </ul>
+				</li>	
 			</ul>
+			</div>
 		</nav>
 	</header>
 	<section class="navbar-down">

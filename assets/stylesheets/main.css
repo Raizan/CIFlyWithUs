@@ -69,14 +69,10 @@ body.white
 .login-nav
 {
 	float: right;
-	display: inline-block;
 	width: 30%;
 	text-align: right;
 }
 
-.login-nav li{
-	display: inline-block;
-}
 
 .site-nav
 {
@@ -204,7 +200,8 @@ body.white
 
 /*-------------------------------------REGISTER ---------------------------------------------*/
 .navbar-down{
-	margin-top: 7%;
+	top : 5%;
+	margin-top: 10%;
 }
 
 .font{
