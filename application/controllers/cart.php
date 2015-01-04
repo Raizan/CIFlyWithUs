@@ -29,7 +29,8 @@ class Cart extends CI_Controller {
         $id_reservasi = $this->input->get('idr');
         $id_jadwal = $this->input->get('idj');
 
-        
+        $this->reservasi->delete_detil($id_reservasi, $id_jadwal);
+        redirect('cart');
     }
 
 }

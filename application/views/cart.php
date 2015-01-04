@@ -28,7 +28,6 @@
 
                 echo '<td><a class="button" href="'.base_url().'index.php/cart/delete?idj='.$detil[$i]["id_jadwal"].'&idr='.$detil[$i]["id_reservasi"].'">BOOK NOW!</td>';
                 echo '</tr>';
-                $i = $i + 1;
             }
         ?>
         </tbody>

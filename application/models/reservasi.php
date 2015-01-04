@@ -38,6 +38,23 @@ class Reservasi extends CI_Model {
                     'nomor_identitas' => $nomor_identitas
                 );
                 $this->db->insert('detil_reservasi', $data);
+
+                // update harga
+                $query = $this->db->get_where('reservasi',
+                    array(
+                        'id_reservasi' => $id_reservasi
+                    ));
+                $row = $query->row();
+                $total_now = $row->total_pembayaran;
+                if ($total_now == null){
+                    $total_now = 0;
+                }
+                $total_now = $total_now + $harga;
+                $this->db->where('id_reservasi', $id_reservasi);
+                $data2 = array(
+                    'total_pembayaran' => $total_now
+                );
+                $this->db->update('reservasi', $data2);
             }
             return "success";
         }
@@ -71,4 +88,12 @@ class Reservasi extends CI_Model {
         }
     }
 
+    function delete_detil($id_reservasi, $id_jadwal){
+        $data = array(
+            'id_reservasi' => $id_reservasi,
+            'id_jadwal' => $id_jadwal
+        );
+        $this->db->delete('detil_reservasi', $data);
+        // jangan lupa update harga
+    }
 }
