@@ -26,6 +26,7 @@ class Customer extends CI_Model {
         {
             $row = $auth->row();
             $data["nama_customer"] = $row->nama_customer;
+            $data["id_customer"] = $row->id_customer;
             $data["auth"] = true;
             return $data;
         }
