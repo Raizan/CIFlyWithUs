@@ -4,6 +4,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/main.css" />
 </head>
 <body class="long">
+	<div class="center">
+		<h3 class="font title-font">&nbsp;<b class="font-yellow">Cart</b></h3>
     <table>
     	<thead class="search-title stable-head">
         <th>ID Jadwal</th>
@@ -35,5 +37,6 @@
         ?>
         </tbody>
     </table>
+</div>
 </body>
 </html>
