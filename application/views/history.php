@@ -29,7 +29,7 @@
     </header>
 <section class="page navbar-down">
     <div class="center">
-        <h3 class="font title-font">&nbsp;<b class="font-yellow">Cart</b></h3>
+        <h3 class="font title-font">&nbsp;<b class="font-yellow">History</b></h3>
         <table>
             <thead class="search-title stable-head bold">
             <th>ID Reservasi</th>

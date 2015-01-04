@@ -37,6 +37,8 @@ class Cart extends CI_Controller {
         $id_reservasi = $this->session->userdata('id_reservasi');
         $this->reservasi->pay($id_reservasi);
         $this->session->unset_userdata('id_reservasi');
+        $this->session->set_flashdata('pesan','Terima kasih telah melakukan pemesanan tiket di website kami.');
+        redirect('search');
     }
 
     function delete(){
