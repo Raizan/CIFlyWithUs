@@ -19,7 +19,7 @@
 	</script>
 </head>
 <body id="page" class="white x-hidden">
-	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/jquery-1.11.2.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/bootstrap.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/main.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
