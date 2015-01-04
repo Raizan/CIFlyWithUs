@@ -1,6 +1,7 @@
 <html>
 <head>
     <title>Fly With Us | Online Airplane Ticket Reservation</title>
+    <link rel="stylesheet" href="--><?php echo base_url("assets/stylesheets/main.css");?><!--"/>
 </head>
 <body>
     <table>
@@ -27,7 +28,7 @@
                 echo '<td>'.$detil[$i]["nomor_identitas"].'</td>';
                 echo '<td>'.$detil[$i]["bandara_asal"].'</td>';
                 echo '<td>'.$detil[$i]["bandara_tujuan"].'</td>';
-                echo '<td><a href="'.base_url().'index.php/cart/delete?idj='.$detil[$i]["id_jadwal"].'&idr='.$detil[$i]["id_reservasi"].'">BOOK NOW!</td>';
+                echo '<td><a class="button" href="'.base_url().'index.php/cart/delete?idj='.$detil[$i]["id_jadwal"].'&idr='.$detil[$i]["id_reservasi"].'">BOOK NOW!</td>';
                 echo '</tr>';
                 $i = $i + 1;
             }
