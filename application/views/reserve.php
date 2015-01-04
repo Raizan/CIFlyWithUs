@@ -22,7 +22,7 @@
 				<!--<li id="main-logo"><img src="../images"  </li>-->
 				<li><a href"#">Home</a></li>
 				<li>About</li>
-				<li>Contact</li>
+				<li><a href="<?php echo base_url();?>index.php/cart">Cart</a></li>
 			</ul>
 			<ul class="login-nav">
 				<li><a href="<register>">Sign Out</a></li>
