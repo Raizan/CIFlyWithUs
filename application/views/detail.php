@@ -33,13 +33,14 @@
             </ul>
             </div>
         </nav>
-    </header> 
-        <div>
+    </header>
+    <section class="navbar-down"> 
+        <div class="center">
             <form class="form-horizontal" method="post" action="<?php echo base_url(); ?>index.php/book/exec">
                 <fieldset>
 
                     <!-- Form Name -->
-                    <legend>Detil Reservasi</legend>
+                    <h3 class="font title-font"><b class="font-yellow">Detail</b> Reservasi</h3>
 
                     <!-- Multiple Radios -->
                     <div class="control-group">
@@ -106,5 +107,6 @@
             </form>
 
         </div>
+        </section>
     </body>
 </html>

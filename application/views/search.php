@@ -108,13 +108,6 @@
 							<input type="date" name="date_go" placeholder="27/12/2014">
 						</div>
 						<br>
-						<div class="main-label">
-							<label>Date (If Round Trip checked):</label>
-						</div>
-						<div class="form-rule">
-							<input type="date" name="date_back" placeholder="27/12/2014">
-						</div>
-						<br>
 					</div>
 				</li>
 				<li class="search-col">
