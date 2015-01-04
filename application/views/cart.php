@@ -4,8 +4,10 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/main.css" />
 </head>
 <body class="long">
+	<div class="center">
+		<h3 class="font title-font">&nbsp;<b class="font-yellow">Cart</b></h3>
     <table>
-    	<thead class="search-title stable-head">
+    	<thead class="search-title stable-head bold">
         <th>ID Jadwal</th>
         <th>Asal</th>
         <th>Tujuan</th>
@@ -32,5 +34,6 @@
         ?>
         </tbody>
     </table>
+</div>
 </body>
 </html>
