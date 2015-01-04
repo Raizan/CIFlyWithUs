@@ -24,11 +24,23 @@ class Book extends CI_Controller {
 
         if ($for_myself == "Ya"){
             $flag = $this->reservasi->create($id_jadwal);
+
+            if ($flag == null){
+                $this->session->set_flashdata('pesan', 'Tiket habis.');
+                redirect('search');
+            }
+
             $data["flag"] = $flag;
             $this->load->view('redirect_book', $data);
         }
         else {
             $flag = $this->reservasi->create($id_jadwal, $nama_penumpang, $nomor_identitas, $age);
+
+            if ($flag == null){
+                $this->session->set_flashdata('pesan', 'Tiket habis.');
+                redirect('search');
+            }
+
             $data["flag"] = $flag;
             $this->load->view('redirect_book', $data);
         }
@@ -47,5 +59,4 @@ class Book extends CI_Controller {
             }
         }
     }
-
 }

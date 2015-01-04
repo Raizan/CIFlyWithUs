@@ -21,13 +21,21 @@ class Reservasi extends CI_Model {
     }
 
     function create($id_jadwal, $nama_penumpang=null, $nomor_identitas=null, $age=null){
-        if ($nama_penumpang == null and $nomor_identitas == null and $age == null){
+        if ($nama_penumpang == null and $nomor_identitas == null and $age == null) {
             $id_reservasi = $this->session->userdata('id_reservasi');
             $nomor_identitas = $this->session->userdata('nomor_identitas');
             $nama_penumpang = $this->session->userdata('nama');
 
             // Asumsi penumpang dewasa, prad lagi buat fungsi perhitungannya
             $this->load->model('jadwal');
+
+            $result = $this->jadwal->seat_check($id_jadwal);
+            echo $result;
+            return;
+            if ($result == false){
+                return null;
+            }
+
             $harga = $this->jadwal->get_harga($id_jadwal);
             if ($harga != null){
                 $data = array(
