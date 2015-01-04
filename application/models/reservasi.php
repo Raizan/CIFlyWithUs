@@ -72,6 +72,7 @@ class Reservasi extends CI_Model {
         if ($query->num_rows() > 0){
             foreach ($query->result() as $row)
             {
+                $detil[$i]["id"] = $row->id;
                 $detil[$i]["id_reservasi"] = $row->id_reservasi;
                 $detil[$i]["id_jadwal"] = $row->id_jadwal;
                 $detil[$i]["harga"] = $row->harga;
@@ -88,12 +89,11 @@ class Reservasi extends CI_Model {
         }
     }
 
-    function delete_detil($id_reservasi, $id_jadwal){
+    function delete_detil($id){
         $data = array(
-            'id_reservasi' => $id_reservasi,
-            'id_jadwal' => $id_jadwal
+            'id' => $id
         );
         $this->db->delete('detil_reservasi', $data);
-        // jangan lupa update harga
+        
     }
 }
