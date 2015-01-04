@@ -1,9 +1,9 @@
 <html>
 <head>
     <title>Fly With Us | Online Airplane Ticket Reservation</title>
-    <link rel="stylesheet" href="<?php echo base_url("assets/stylesheets/main.css");?>"/>
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/main.css" />
 </head>
-<body>
+<body class="long">
     <table>
     	<thead class="search-title stable-head">
         <th>ID Jadwal</th>
