@@ -89,6 +89,38 @@ class Reservasi extends CI_Model {
         }
     }
 
+    function get_history($id_customer){
+        $query = $this->db->get_where('reservasi',
+            array(
+               'id_customer' => $id_customer
+            ));
+        $detil = null;
+        $i = 0;
+        if ($query->num_rows() > 0){
+            foreach ($query->result() as $row)
+            {
+                $reservasi[$i]["id_reservasi"] = $row->id_reservasi;
+                $reservasi[$i]["id_customer"] = $row->id_customer;
+                $reservasi[$i]["tanggal_book"] = $row->tanggal_book;
+                $reservasi[$i]["total_pembayaran"] = $row->total_pembayaran;
+                $reservasi[$i]["status"] = $row->status;
+                $i = $i + 1;
+            }
+            return $reservasi;
+        }
+        else {
+            return null;
+        }
+    }
+
+    function pay($id_reservasi){
+        $this->db->where('id_reservasi', $id_reservasi);
+        $data = array(
+            'status' => 'PAID'
+        );
+        $this->db->update('reservasi', $data);
+    }
+
     function delete_detil($id){
         $query = $this->db->get_where('detil_reservasi',
             array(
@@ -120,6 +152,5 @@ class Reservasi extends CI_Model {
             'id' => $id
         );
         $this->db->delete('detil_reservasi', $data);
-
     }
 }

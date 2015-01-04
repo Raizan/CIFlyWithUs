@@ -33,6 +33,7 @@
         </thead>
         <tbody class="font2">
         <?php
+            $total = 0;
             for($i = 0; $i < sizeof($detil); $i = $i + 1){
                 echo '<tr>';
                 echo '<td>'.$detil[$i]["id_jadwal"].'</td>';
@@ -41,11 +42,17 @@
                 echo '<td>'.$detil[$i]["harga"].'</td>';
                 echo '<td>'.$detil[$i]["nama_penumpang"].'</td>';
                 echo '<td>'.$detil[$i]["nomor_identitas"].'</td>';
-
+                $total = $total + $detil[$i]["harga"];
                 echo '<td><a class="button" href="'.base_url().'index.php/cart/delete?id='.$detil[$i]["id"].'">CANCEL</td>';
                 echo '</tr>';
             }
         ?>
+        <br>
+        Total Harga: <?php echo $total; ?>
+        <form method="post" action="<?php echo base_url(); ?>index.php/cart/pay">
+            <input type="hidden" value="bayar" name="bayar_flag">
+            <input type="submit" value="BAYAR">
+        </form>
         </tbody>
     </table>
 </div>

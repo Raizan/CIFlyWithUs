@@ -26,6 +26,19 @@ class Cart extends CI_Controller {
         }
     }
 
+    function history(){
+        $id_customer = $this->session->userdata('id_customer');
+        $history = $this->reservasi->get_history($id_customer);
+        $data["data"] = $history;
+        $this->load->view('history', $data);
+    }
+
+    function pay(){
+        $id_reservasi = $this->session->userdata('id_reservasi');
+        $this->reservasi->pay($id_reservasi);
+        $this->session->unset_userdata('id_reservasi');
+    }
+
     function delete(){
         $id = $this->input->get('id');
 
