@@ -8,6 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/chosen.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/jquery-ui.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/jquery-ui.structure.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/bootstrap.min.css" />
 </head>
 <body id="page" class="white x-hidden">
 	<script type="text/javascript" src="<?php echo base_url();?>assets/javascripts/jquery-1.11.2.min.js"></script>
