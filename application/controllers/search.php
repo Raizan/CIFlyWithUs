@@ -30,8 +30,6 @@ class Search extends CI_Controller {
             $bandara_from = $this->input->get('bandara_from');
             $bandara_to = $this->input->get('bandara_to');
             $date_go = $this->input->get('date_go');
-            $date_back = $this->input->get('date_back');
-            $trip_type = $this->input->get('trip_type');
             $adult = $this->input->get('adult');
             $children = $this->input->get('children');
             $infant = $this->input->get('infant');
@@ -49,23 +47,21 @@ class Search extends CI_Controller {
             }
 
             // Give me the price formula for children and infant
-            if ($trip_type == "one"){
-                if ($adult > 0 or $children > 0 or $infant > 0){
-                    $query = $this->jadwal->get_jadwal($bandara_from, $bandara_to, $date_go);
-                    // Not found
-                    if ($query == null){
-                        $this->session->set_flashdata('pesan','Jadwal penerbangan tidak ditemukan.');
-                        redirect('search');
-                    }
-                    else {
-                        $data["data"] = $query;
-                        $this->load->view('search_result', $data);
-                    }
-                }
-            }
 
-            else if ($trip_type == "round"){
-                // Do something here...
+            if ($adult > 0 or $children > 0 or $infant > 0){
+                $query = $this->jadwal->get_jadwal($bandara_from, $bandara_to, $date_go);
+                // Not found
+                if ($query == null){
+                    $this->session->set_flashdata('pesan','Jadwal penerbangan tidak ditemukan.');
+                    redirect('search');
+                }
+                else {
+                    $data["data"] = $query;
+                    $this->session->set_userdata('adult', $adult);
+                    $this->session->set_userdata('children', $children);
+                    $this->session->set_userdata('infant', $infant);
+                    $this->load->view('search_result', $data);
+                }
             }
         }
     }

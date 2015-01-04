@@ -17,33 +17,23 @@ class Book extends CI_Controller {
 
     function exec(){
         $id_jadwal = $this->input->post('id_jadwal');
-        $for_myself = $this->input->post('for_myself');
         $nama_penumpang = $this->input->post('nama_penumpang');
         $nomor_identitas = $this->input->post('nomor_identitas');
         $age = $this->input->post('age');
 
-        if ($for_myself == "Ya"){
-            $flag = $this->reservasi->create($id_jadwal);
+        // loop sebanyak form
+        $flag = $this->reservasi->create($id_jadwal, $nama_penumpang, $nomor_identitas, $age);
 
-            if ($flag == false){
-                $this->session->set_flashdata('pesan', 'Tiket habis.');
-                redirect('search');
-            }
-
-            $data["flag"] = $flag;
-            $this->load->view('redirect_book', $data);
+        if ($flag == false){
+            $this->session->set_flashdata('pesan', 'Tiket habis.');
+            redirect('search');
         }
-        else {
-            $flag = $this->reservasi->create($id_jadwal, $nama_penumpang, $nomor_identitas, $age);
+        $this->session->unset_userdata('adult');
+        $this->session->unset_userdata('children');
+        $this->session->unset_userdata('infant');
 
-            if ($flag == false){
-                $this->session->set_flashdata('pesan', 'Tiket habis.');
-                redirect('search');
-            }
-
-            $data["flag"] = $flag;
-            $this->load->view('redirect_book', $data);
-        }
+        $data["flag"] = $flag;
+        $this->load->view('redirect_book', $data);
     }
 
     function set_reservasi_session(){

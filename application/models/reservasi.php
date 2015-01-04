@@ -21,54 +21,46 @@ class Reservasi extends CI_Model {
     }
 
     function create($id_jadwal, $nama_penumpang=null, $nomor_identitas=null, $age=null){
-        if ($nama_penumpang == null and $nomor_identitas == null and $age == null) {
-            $id_reservasi = $this->session->userdata('id_reservasi');
-            $nomor_identitas = $this->session->userdata('nomor_identitas');
-            $nama_penumpang = $this->session->userdata('nama');
+        $id_reservasi = $this->session->userdata('id_reservasi');
 
-            // Asumsi penumpang dewasa, prad lagi buat fungsi perhitungannya
-            $this->load->model('jadwal');
+        // Asumsi penumpang dewasa, prad lagi buat fungsi perhitungannya
+        $this->load->model('jadwal');
 
-            $seat_check = $this->jadwal->seat_check($id_jadwal);
+        $seat_check = $this->jadwal->seat_check($id_jadwal);
 
-            if ($seat_check == "full"){
-                return false;
-            }
-
-            $harga = $this->jadwal->get_harga($id_jadwal);
-            if ($harga != null){
-                $data = array(
-                    'id_reservasi' => $id_reservasi ,
-                    'id_jadwal' => $id_jadwal ,
-                    'harga' => $harga,
-                    'nama_penumpang' => $nama_penumpang,
-                    'nomor_identitas' => $nomor_identitas
-                );
-                $this->db->insert('detil_reservasi', $data);
-
-                // update harga
-                $query = $this->db->get_where('reservasi',
-                    array(
-                        'id_reservasi' => $id_reservasi
-                    ));
-                $row = $query->row();
-                $total_now = $row->total_pembayaran;
-                if ($total_now == null){
-                    $total_now = 0;
-                }
-                $total_now = $total_now + $harga;
-                $this->db->where('id_reservasi', $id_reservasi);
-                $data2 = array(
-                    'total_pembayaran' => $total_now
-                );
-                $this->db->update('reservasi', $data2);
-            }
-            return "success";
+        if ($seat_check == "full"){
+            return false;
         }
-        else {
-            // Untuk orang lain
 
+        $harga = $this->jadwal->get_harga($id_jadwal);
+        if ($harga != null){
+            $data = array(
+                'id_reservasi' => $id_reservasi ,
+                'id_jadwal' => $id_jadwal ,
+                'harga' => $harga,
+                'nama_penumpang' => $nama_penumpang,
+                'nomor_identitas' => $nomor_identitas
+            );
+            $this->db->insert('detil_reservasi', $data);
+
+            // update harga
+            $query = $this->db->get_where('reservasi',
+                array(
+                    'id_reservasi' => $id_reservasi
+                ));
+            $row = $query->row();
+            $total_now = $row->total_pembayaran;
+            if ($total_now == null){
+                $total_now = 0;
+            }
+            $total_now = $total_now + $harga;
+            $this->db->where('id_reservasi', $id_reservasi);
+            $data2 = array(
+                'total_pembayaran' => $total_now
+            );
+            $this->db->update('reservasi', $data2);
         }
+        return "success";
     }
 
     function get_detil_reservasi($id_reservasi){
