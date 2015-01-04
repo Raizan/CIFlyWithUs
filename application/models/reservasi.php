@@ -90,10 +90,36 @@ class Reservasi extends CI_Model {
     }
 
     function delete_detil($id){
+        $query = $this->db->get_where('detil_reservasi',
+            array(
+                'id' => $id
+            ));
+        $row = $query->row();
+        $price = $row->harga;
+
+        // update harga di tabel reservasi
+        $id_reservasi = $this->session->userdata('id_reservasi');
+        $query2 = $this->db->get_where('reservasi',
+            array(
+                'id_reservasi' => $id_reservasi
+            ));
+        $row2 = $query2->row();
+        $total_price = $row2->total_pembayaran;
+
+        $total_now = $total_price - $price;
+
+
+        $this->db->where('id_reservasi', $id_reservasi);
+        $data2 = array(
+            'total_pembayaran' => $total_now
+        );
+        $this->db->update('reservasi', $data2);
+
+        // hapus
         $data = array(
             'id' => $id
         );
         $this->db->delete('detil_reservasi', $data);
-        
+
     }
 }
