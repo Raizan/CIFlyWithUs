@@ -16,7 +16,8 @@ class Cart extends CI_Controller {
         else {
             $result = $this->reservasi->get_detil_reservasi($id_reservasi);
             if ($result == null){
-
+                $this->session->set_flashdata('pesan','Anda belum melakukan booking. Silakan melakukan pencarian');
+                redirect('search');
             }
             else {
                 $data["detil"] = $result;
@@ -25,11 +26,23 @@ class Cart extends CI_Controller {
         }
     }
 
-    function delete(){
-        $id_reservasi = $this->input->get('idr');
-        $id_jadwal = $this->input->get('idj');
+    function history(){
+        $id_customer = $this->session->userdata('id_customer');
+        $history = $this->reservasi->get_history($id_customer);
+        $data["data"] = $history;
+        $this->load->view('history', $data);
+    }
 
-        $this->reservasi->delete_detil($id_reservasi, $id_jadwal);
+    function pay(){
+        $id_reservasi = $this->session->userdata('id_reservasi');
+        $this->reservasi->pay($id_reservasi);
+        $this->session->unset_userdata('id_reservasi');
+    }
+
+    function delete(){
+        $id = $this->input->get('id');
+
+        $this->reservasi->delete_detil($id);
         redirect('cart');
     }
 

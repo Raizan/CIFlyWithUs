@@ -72,6 +72,7 @@ class Reservasi extends CI_Model {
         if ($query->num_rows() > 0){
             foreach ($query->result() as $row)
             {
+                $detil[$i]["id"] = $row->id;
                 $detil[$i]["id_reservasi"] = $row->id_reservasi;
                 $detil[$i]["id_jadwal"] = $row->id_jadwal;
                 $detil[$i]["harga"] = $row->harga;
@@ -88,12 +89,68 @@ class Reservasi extends CI_Model {
         }
     }
 
-    function delete_detil($id_reservasi, $id_jadwal){
+    function get_history($id_customer){
+        $query = $this->db->get_where('reservasi',
+            array(
+               'id_customer' => $id_customer
+            ));
+        $detil = null;
+        $i = 0;
+        if ($query->num_rows() > 0){
+            foreach ($query->result() as $row)
+            {
+                $reservasi[$i]["id_reservasi"] = $row->id_reservasi;
+                $reservasi[$i]["id_customer"] = $row->id_customer;
+                $reservasi[$i]["tanggal_book"] = $row->tanggal_book;
+                $reservasi[$i]["total_pembayaran"] = $row->total_pembayaran;
+                $reservasi[$i]["status"] = $row->status;
+                $i = $i + 1;
+            }
+            return $reservasi;
+        }
+        else {
+            return null;
+        }
+    }
+
+    function pay($id_reservasi){
+        $this->db->where('id_reservasi', $id_reservasi);
         $data = array(
-            'id_reservasi' => $id_reservasi,
-            'id_jadwal' => $id_jadwal
+            'status' => 'PAID'
+        );
+        $this->db->update('reservasi', $data);
+    }
+
+    function delete_detil($id){
+        $query = $this->db->get_where('detil_reservasi',
+            array(
+                'id' => $id
+            ));
+        $row = $query->row();
+        $price = $row->harga;
+
+        // update harga di tabel reservasi
+        $id_reservasi = $this->session->userdata('id_reservasi');
+        $query2 = $this->db->get_where('reservasi',
+            array(
+                'id_reservasi' => $id_reservasi
+            ));
+        $row2 = $query2->row();
+        $total_price = $row2->total_pembayaran;
+
+        $total_now = $total_price - $price;
+
+
+        $this->db->where('id_reservasi', $id_reservasi);
+        $data2 = array(
+            'total_pembayaran' => $total_now
+        );
+        $this->db->update('reservasi', $data2);
+
+        // hapus
+        $data = array(
+            'id' => $id
         );
         $this->db->delete('detil_reservasi', $data);
-        // jangan lupa update harga
     }
 }
