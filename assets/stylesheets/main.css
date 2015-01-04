@@ -19,12 +19,12 @@ ul, li {
 
 @font-face {
   font-family: 'OstrichSans';
-  src: url('/font/OstrichSans-Heavy.otf');
+  src: url(../font/OstrichSans-Heavy.otf);
   }
 
 @font-face {
   font-family: 'Cicle';
-  src: url('/font/Cicle/Cicle_Gordita.ttf');
+  src: url(../font/Cicle/Cicle_Gordita.ttf);
   }
 
 .page {
