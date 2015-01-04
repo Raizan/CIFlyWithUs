@@ -20,6 +20,8 @@ class Login extends CI_Controller {
             $data = array(
                 'email' => $email,
                 'nama' => $auth["nama_customer"],
+                'nomor_identitas' => $auth["nomor_identitas"],
+                'id_customer' => $auth["id_customer"],
                 'login' => TRUE
             );
 

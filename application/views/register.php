@@ -1,18 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>FlyWithUs</title>
-  <link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/login.css?body=1" media="all" rel="stylesheet" />
-<link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/register.css?body=1" media="all" rel="stylesheet" />
-<link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/reserve.css?body=1" media="all" rel="stylesheet" />
-<link data-turbolinks-track="true" href="<?php echo base_url();?>assets/stylesheets/application.css?body=1" media="all" rel="stylesheet" />
-
-</head>
-<body>
-
-<!DOCTYPE html>
-<html>
-<head>
 	<title>Fly With Us | Online Airplane Ticket Reservation</title>
 	<link href="<?php echo base_url();?>assets/stylesheets/main.css?body=1" media="screen" rel="stylesheet" />
 	<link href="<?php echo base_url();?>assets/stylesheets/style1.css?body=1" media="screen" rel="stylesheet" />
