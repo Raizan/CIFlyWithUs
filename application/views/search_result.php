@@ -11,7 +11,7 @@
 	<script src="<?php echo base_url("assets/javascripts/main.js"); ?>"></script>
 	<script src="<?php echo base_url("assets/javascripts/modernizr-2.6.2-respond-1.1.0.min.js"); ?>"></script>
 </head>
-<body id="page">
+<body id="page" class="long">
 				<header>
 		<nav id="navbar">
 			<ul class="site-nav">

@@ -48,7 +48,7 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
+$db['default']['hostname'] = '10.151.34.198';
 $db['default']['port'] = 5432; 
 $db['default']['username'] = 'postgres';
 $db['default']['password'] = 'root';
