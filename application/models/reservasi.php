@@ -47,4 +47,28 @@ class Reservasi extends CI_Model {
         }
     }
 
+    function get_detil_reservasi($id_reservasi){
+        $sql = 'select d.*, j.bandara_asal, j.bandara_tujuan from detil_reservasi d, jadwal j, reservasi r where j.id_jadwal = d.id_jadwal and r.id_reservasi = d.id_reservasi and r.id_reservasi = \''.$id_reservasi.'\';';
+        $query = $this->db->query($sql);
+        $detil = null;
+        $i = 0;
+        if ($query->num_rows() > 0){
+            foreach ($query->result() as $row)
+            {
+                $detil[$i]["id_reservasi"] = $row->id_reservasi;
+                $detil[$i]["id_jadwal"] = $row->id_jadwal;
+                $detil[$i]["harga"] = $row->harga;
+                $detil[$i]["nama_penumpang"] = $row->nama_penumpang;
+                $detil[$i]["nomor_identitas"] = $row->nomor_identitas;
+                $detil[$i]["bandara_asal"] = $row->bandara_asal;
+                $detil[$i]["bandara_tujuan"] = $row->bandara_tujuan;
+                $i = $i + 1;
+            }
+            return $detil;
+        }
+        else {
+            return null;
+        }
+    }
+
 }
