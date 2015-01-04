@@ -33,7 +33,6 @@
         </thead>
         <tbody class="font2">
         <?php
-            $i = 0;
             for($i = 0; $i < sizeof($detil); $i = $i + 1){
                 echo '<tr>';
                 echo '<td>'.$detil[$i]["id_jadwal"].'</td>';
