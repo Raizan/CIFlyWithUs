@@ -28,7 +28,7 @@
                 echo '<td>'.$detil[$i]["nama_penumpang"].'</td>';
                 echo '<td>'.$detil[$i]["nomor_identitas"].'</td>';
 
-                echo '<td><a class="button" href="'.base_url().'index.php/cart/delete?idj='.$detil[$i]["id_jadwal"].'&idr='.$detil[$i]["id_reservasi"].'">BOOK NOW!</td>';
+                echo '<td><a class="button" href="'.base_url().'index.php/cart/delete?idj='.$detil[$i]["id_jadwal"].'&idr='.$detil[$i]["id_reservasi"].'">CANCEL</td>';
                 echo '</tr>';
             }
         ?>
