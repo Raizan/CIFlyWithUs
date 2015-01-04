@@ -2,6 +2,7 @@
 <head>
     <title>Fly With Us | Online Airplane Ticket Reservation</title>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/main.css" />
+    <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/bootstrap.min.css" />
 </head>
 <body class="long">
 <header>
