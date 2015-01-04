@@ -4,6 +4,7 @@
 </head>
 <body>
     <table>
+    	<thead class="search-title stable-head">
         <th>ID Jadwal</th>
         <th>Asal</th>
         <th>Tujuan</th>
@@ -13,6 +14,8 @@
         <th>Asal</th>
         <th>Tujuan</th>
         <th>Action</th>
+        </thead>
+        <tbody class="font2">
         <?php
             $i = 0;
             for($i = 0; $i < sizeof($detil); $i = $i + 1){
@@ -29,6 +32,7 @@
                 $i = $i + 1;
             }
         ?>
+        </tbody>
     </table>
 </body>
 </html>
