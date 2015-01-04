@@ -29,11 +29,10 @@ class Reservasi extends CI_Model {
             // Asumsi penumpang dewasa, prad lagi buat fungsi perhitungannya
             $this->load->model('jadwal');
 
-            $result = $this->jadwal->seat_check($id_jadwal);
-            echo $result;
-            return;
-            if ($result == false){
-                return null;
+            $seat_check = $this->jadwal->seat_check($id_jadwal);
+
+            if ($seat_check == "full"){
+                return false;
             }
 
             $harga = $this->jadwal->get_harga($id_jadwal);

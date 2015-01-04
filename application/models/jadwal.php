@@ -55,23 +55,10 @@ class Jadwal extends CI_Model {
         $now = $row->cekkursi;
 
         if ($now == "available"){
-            // kurangi kursi di tabel jadwal
-            $query2 = $this->db->get_where('jadwal',
-                array(
-                   'id_jadwal' => $id_jadwal
-                ));
-            $row2 = $query2->row();
-            $seat_now = $row2->kursi_tersedia;
-            $seat_now = $seat_now - 1;
-
-            $this->db->where('id_jadwal', $id_jadwal);
-            $data = array(
-                'kursi_tersedia' => $seat_now
-            );
-            $this->db->update('reservasi', $data);
+            return "available";
         }
         else if ($now == "full"){
-            return null;
+            return "full";
         }
     }
 

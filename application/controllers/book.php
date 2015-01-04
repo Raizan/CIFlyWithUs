@@ -25,7 +25,7 @@ class Book extends CI_Controller {
         if ($for_myself == "Ya"){
             $flag = $this->reservasi->create($id_jadwal);
 
-            if ($flag == null){
+            if ($flag == false){
                 $this->session->set_flashdata('pesan', 'Tiket habis.');
                 redirect('search');
             }
@@ -36,7 +36,7 @@ class Book extends CI_Controller {
         else {
             $flag = $this->reservasi->create($id_jadwal, $nama_penumpang, $nomor_identitas, $age);
 
-            if ($flag == null){
+            if ($flag == false){
                 $this->session->set_flashdata('pesan', 'Tiket habis.');
                 redirect('search');
             }
