@@ -37,7 +37,7 @@
 	</header>
 	<section class="page navbar-down">
 		<div class="center">
-			<div id="ticket-details">
+			<div id="ticket-details ">
 				<table>
 					<thead>Depart : </thead>
 					<tbody>

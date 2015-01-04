@@ -349,3 +349,10 @@ body.white
 .bold {
 	font-weight: bold;
 }
+
+.search-body{
+	margin: 3%;
+	vertical-align: center;
+	text-align: center;
+	width: 100%;
+}

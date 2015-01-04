@@ -49,7 +49,7 @@
 					<th></th>
 				</tr>
 			</thead>
-			<tbody class="font2">
+			<tbody class="font2 search-body">
 				<?php
 					$i = 0;
 					for($i = 0; $i < sizeof($data); $i = $i + 1){
@@ -59,7 +59,7 @@
 						echo '<td>'.$data[$i]["tanggal_berangkat"].'</td>';
 						echo '<td>'.$data[$i]["tanggal_sampai"].'</td>';
 						echo '<td>'.$data[$i]["harga_satuan"].'</td>';
-						echo '<td><a href="'.base_url().'index.php/book?id='.$data[$i]["id_jadwal"].'">BOOK NOW!</td>';
+						echo '<td><a class="button" href="'.base_url().'index.php/book?id='.$data[$i]["id_jadwal"].'">BOOK NOW!</td>';
 						echo '</tr>';
 						$i = $i + 1;
 					}
