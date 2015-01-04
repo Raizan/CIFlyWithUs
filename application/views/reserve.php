@@ -21,12 +21,21 @@
 			<ul class="site-nav">
 				<!--<li id="main-logo"><img src="../images"  </li>-->
 				<li><a href"#">Home</a></li>
-				<li>About</li>
-				<li><a href="<?php echo base_url();?>index.php/cart">Cart</a></li>
+				<li>Contact</li>
+				<li><a href="<?php echo base_url();?>index.php/search">Search</a></li>
 			</ul>
-			<ul class="login-nav">
-				<li><a href="<register>">Sign Out</a></li>
+			<div class="nav-collapse collapse">
+			<ul class="login-nav nav">
+				<li class="dropdown">
+                    <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false" aria-expanded="false"><?php echo $this->session->userdata('nama'); ?><b class=" icon-angle-down"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="<?php echo base_url();?>index.php/cart">Cart</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/cart/history">History</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/logout">Sign Out</a></li>
+                    </ul>
+				</li>	
 			</ul>
+			</div>
 		</nav>
 	</header>
 	<section class="navbar-down">

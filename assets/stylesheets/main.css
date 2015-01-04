@@ -58,6 +58,7 @@ body.white
 	float: left;
 	margin-left: 3%;
 	padding: 2px;
+	display: inline-block;
 }
 
 #navbar li:hover
@@ -65,18 +66,23 @@ body.white
 	color:  #ffd900;
 }
 
-#navbar ul.login-nav
+.login-nav
 {
 	float: right;
-	display: inline-block;
-	width: 50%;
+	width: 30%;
+	text-align: right;
 }
 
-#navbar ul.site-nav
+
+.site-nav
 {
 	float: left;
 	display: inline-block;
 	width: 30%;
+}
+
+.site-nav li{
+	display: inline-block;
 }
 
 #navbar a{
@@ -98,11 +104,6 @@ body.white
 	position: absolute;
 	width: 100%;
 	
-}
-.login-nav .login-nav li{
-	text-align: right;
-	width: 100%;
-	display: block;
 }
 /*----------------------------------------SECTION HOME --------------------------------------------*/
 .text-center
@@ -199,7 +200,8 @@ body.white
 
 /*-------------------------------------REGISTER ---------------------------------------------*/
 .navbar-down{
-	margin-top: 7%;
+	top : 5%;
+	margin-top: 10%;
 }
 
 .font{

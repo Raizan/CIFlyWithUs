@@ -29,7 +29,7 @@
 				<li>About</li>
 				<li>Contact</li>
 			</ul>
-			<ul class="login-nav">
+			<ul class="login-nav pull-right">
 				<li><a href="<?php echo base_url();?>index.php/register">Sign Up</a></li>
 				<li><a data-remote="true" data-target="#login-box" data-toggle="modal" href="<?php echo base_url();?>index.php/login">Sign In</a></li>
 			</ul>
