@@ -14,6 +14,8 @@ class Search extends CI_Controller {
     }
 
     function exec(){
+        $this->session->set_userdata('page_url',  current_url());
+
         $bandara_from = $this->input->get('bandara_from');
         $bandara_to = $this->input->get('bandara_to');
         // Compare bandara
@@ -51,7 +53,7 @@ class Search extends CI_Controller {
                 if ($adult > 0 or $children > 0 or $infant > 0){
                     $query = $this->jadwal->get_jadwal($bandara_from, $bandara_to, $date_go);
                     // Not found
-                    if ($query == 0){
+                    if ($query == null){
                         $this->session->set_flashdata('pesan','Jadwal penerbangan tidak ditemukan.');
                         redirect('search');
                     }

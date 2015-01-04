@@ -9,7 +9,7 @@ class Jadwal extends CI_Model {
     function get_jadwal($bandara_from, $bandara_to, $date_go){
         $date_go_1 = $date_go.' 00:00:00';
         $date_go_2 = $date_go.' 23:59:59';
-        $sql = 'SELECT * FROM jadwal WHERE bandara_asal =\''.$bandara_from.'\''.' and bandara_tujuan=\''.$bandara_to.'\''.' and (tanggal_berangkat >=\''.$date_go_1.'\''.' and tanggal_berangkat <= \''.$date_go_2.'\')';
+        $sql = 'SELECT j.*, m.nama_maskapai FROM jadwal j, pesawat p, maskapai m WHERE j.id_pesawat = p.id_pesawat and p.id_maskapai = m.id_maskapai and j.bandara_asal =\''.$bandara_from.'\''.' and j.bandara_tujuan=\''.$bandara_to.'\''.' and (j.tanggal_berangkat >=\''.$date_go_1.'\''.' and j.tanggal_berangkat <= \''.$date_go_2.'\')';
         $query = $this->db->query($sql);
         $jadwal = null;
         $i = 0;
@@ -23,12 +23,13 @@ class Jadwal extends CI_Model {
                 $jadwal[$i]["tanggal_sampai"] = $row->tanggal_sampai;
                 $jadwal[$i]["harga_satuan"] = $row->harga_satuan;
                 $jadwal[$i]["kursi_tersedia"] = $row->kursi_tersedia;
+                $jadwal[$i]["nama_maskapai"] = $row->nama_maskapai;
                 $i = $i + 1;
             }
             return $jadwal;
         }
         else {
-            return 0;
+            return null;
         }
     }
 
