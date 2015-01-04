@@ -56,19 +56,19 @@
 				{
 					echo '<div class="control-group book-wrapper">';
 			  		echo '<label class="control-label" for="nama">Identity Number</label>';
-			  		echo '<div class="controls">'
+			  		echo '<div class="controls">';
 			    		echo'<input id="id" name="id" type="text" class="input-xlarge" required="">';
 			  		echo '</div>';
 					echo '</div>';
 					echo '<div class="control-group book-wrapper">';
 			  		echo '<label class="control-label" for="nama">Full Name</label>';
-			  		echo '<div class="controls">'
+			  		echo '<div class="controls">';
 			    		echo'<input id="nama" name="nama" type="text" placeholder="Batman bin Suparman" class="input-xlarge" required="">';
 			  		echo '</div>';
 					echo '</div>';
 					echo '<div class="control-group book-wrapper">';
 			  		echo '<label class="control-label" for="nama">Phone Number</label>';
-			  		echo '<div class="controls">'
+			  		echo '<div class="controls">';
 			    		echo'<input id="telp" name="telp" type="text" placeholder="Batman bin Suparman" class="input-xlarge" required="">';
 			  		echo '</div>';
 					echo '</div>';

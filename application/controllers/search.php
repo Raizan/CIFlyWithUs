@@ -49,7 +49,16 @@ class Search extends CI_Controller {
             // Give me the price formula for children and infant
             if ($trip_type == "one"){
                 if ($adult > 0 or $children > 0 or $infant > 0){
-
+                    $query = $this->jadwal->get_jadwal($bandara_from, $bandara_to, $date_go);
+                    // Not found
+                    if ($query == 0){
+                        $this->session->set_flashdata('pesan','Jadwal penerbangan tidak ditemukan.');
+                        redirect('search');
+                    }
+                    else {
+                        $data["data"] = $query;
+                        $this->load->view('search_result', $data);
+                    }
                 }
             }
 

@@ -1,6 +1,6 @@
 <?php
 
-class Bandara extends CI_Controller {
+class Bandara extends CI_Model {
 
     function __construct(){
         parent::__construct();
