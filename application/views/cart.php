@@ -4,6 +4,21 @@
     <link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assets/stylesheets/main.css" />
 </head>
 <body class="long">
+	<header>
+		<nav id="navbar">
+			<ul class="site-nav">
+				<!--<li id="main-logo"><img src="../images"  </li>-->
+				<li><a href"#">Home</a></li>
+				<li>About</li>
+				<li><a href="<?php echo base_url();?>index.php/cart">Cart</a></li>
+			</ul>
+			<ul class="login-nav">
+				<li>Welcome, <?php echo $this->session->userdata('nama'); ?></li>
+				<li><a href="<?php echo base_url(); ?>index.php/logout">Sign Out</a></li>
+			</ul>
+		</nav>
+	</header>
+	<section class="page navbar-down">
 	<div class="center">
 		<h3 class="font title-font">&nbsp;<b class="font-yellow">Cart</b></h3>
     <table>
@@ -35,5 +50,6 @@
         </tbody>
     </table>
 </div>
+</section>
 </body>
 </html>

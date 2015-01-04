@@ -21,6 +21,7 @@
 				<li><a href="<?php echo base_url();?>index.php/cart">Cart</a></li>
 			</ul>
 			<ul class="login-nav">
+				<li>Welcome, <?php echo $this->session->userdata('nama'); ?></li>
 				<li><a href="<register>">Sign Out</a></li>
 			</ul>
 		</nav>
