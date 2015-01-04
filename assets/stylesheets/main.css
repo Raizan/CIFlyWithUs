@@ -325,3 +325,7 @@ body.white
 .stable-head{
 	border-bottom: 2px solid #00ccd5; 
 }
+
+.bold {
+	font-weight: bold;
+}
