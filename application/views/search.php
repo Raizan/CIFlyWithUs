@@ -115,10 +115,6 @@
 							<input type="date" name="date_back" placeholder="27/12/2014">
 						</div>
 						<br>
-						<div class="form-rule">
-							<input type="radio" name="trip_type" value="one" checked="checked"><label>One Way</label>
-							<input type="radio" name="trip_type" value="round"><label>Round Trip</label>
-						</div>
 					</div>
 				</li>
 				<li class="search-col">

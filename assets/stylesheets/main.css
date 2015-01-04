@@ -230,6 +230,7 @@ body.white
 .title-font {
 	font-size: 300%;
 	font-weight: bold;
+	margin-bottom: 4%;
 }
 
 #search-table {
@@ -245,6 +246,7 @@ body.white
 	width: 30%;
 	border-right: 2px solid #ffd900;
 	margin-left: 2%;
+	height: 100%;
 }
 
 .col-header {
@@ -326,6 +328,18 @@ body.white
 	width: 100%;
 	overflow-x: hidden; 
 }
+
+.trip-type {
+	float: left;
+	display: inline-block;
+}
+
+.form-rule label{
+	width: auto;
+	display: inline-block;
+	margin-right: 5%;
+}
+
 
 /*---------------------SEARCH RESULT-----------------------------------*/
 .stable-head{
