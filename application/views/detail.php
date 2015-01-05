@@ -35,7 +35,7 @@
         </nav>
     </header>
     <section class="navbar-down"> 
-        <div class="center">
+        <div >
             <form class="form-horizontal" method="post" action="<?php echo base_url(); ?>index.php/book/exec">
                 <fieldset>
                     <!-- Form Name -->
@@ -52,8 +52,13 @@
                             if ($adult_gauge < $adult){
                                 echo '
                                     <div>
+
                                     For Adult
                                     <input type="hidden" name="id_jadwal_'.$i.'"'.'value="'.$id_jadwal.'">
+
+                                    <label class="detail-label">For Adult</label>
+                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+
 
 
                                     <!-- Text input-->
@@ -81,8 +86,13 @@
                             else if ($children_gauge < $children){
                                 echo '
                                     <div>
+
                                     For Children
                                     <input type="hidden" name="id_jadwal_'.$i.'"'.'value="'.$id_jadwal.'">
+
+                                    <label class="detail-label">For Children</label>
+                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+
 
 
                                     <!-- Text input-->
@@ -110,8 +120,13 @@
                             else if ($infant_gauge < $infant){
                                 echo '
                                     <div>
+
                                     For Infant
                                     <input type="hidden" name="id_jadwal_'.$i.'"'.'value="'.$id_jadwal.'">
+
+                                    <label class="detail-label">For Infant</label>
+                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+
 
                                     <!-- Text input-->
                                     <div class="control-group">
@@ -142,7 +157,10 @@
                     <div class="control-group">
                         <label class="control-label" for="submit"></label>
                         <div class="controls">
-                            <button id="submit" value="ayam" name="submit" class="btn btn-primary">Submit</button>
+                            <button id="submit" name="submit" class="btn btn-primary">Submit</button>
+
+                            <button id="submit" name="submit" class="button">Submit</button>
+
                         </div>
                     </div>
 

@@ -411,3 +411,14 @@ body.white
     border-color: #ffd900;
     background: #ffd900;
 }
+
+.detail-label
+{
+	width: 100%;
+	background-color: #00ccd5;
+	height: 4%;
+	display: block;
+	margin-left: 4%;
+	margin-bottom: 3%;
+	font-weight: bold;
+}
