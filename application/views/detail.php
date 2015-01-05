@@ -54,7 +54,7 @@
                                     <div>
 
                                     <label class="detail-label">For Adult</label>
-                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+                                    <input type="hidden" name="id_jadwal_'.$i.'"'.'value="'.$id_jadwal.'">
 
 
 
@@ -85,7 +85,7 @@
                                     <div>
 \
                                     <label class="detail-label">For Children</label>
-                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+                                    <input type="hidden" name="id_jadwal_'.$i.'"'.'value="'.$id_jadwal.'">
 
 
 
@@ -116,7 +116,7 @@
                                     <div>
 
                                     <label class="detail-label">For Infant</label>
-                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+                                    <input type="hidden" name="id_jadwal_'.$i.'"'.'value="'.$id_jadwal.'">
 
 
                                     <!-- Text input-->
