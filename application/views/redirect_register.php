@@ -2,7 +2,7 @@
     <head>
         <title> Redirecting... </title>
         <script>
-            setTimeout("location.href = 'http://localhost/flywithus/index.php/register';", 5000);
+            setTimeout("location.href = '<?php echo base_url();?>/index.php/login';", 5000);
         </script>
     </head>
     <body>
@@ -15,7 +15,7 @@
                     echo '<img src="'.base_url().'assets/images/failed.jpg">';
                 }
             ?>
-            <p> Redirecting in 5 seconds, if it doesn't work click <a href="http://localhost/flywithus/index.php/register">here</a></p>
+            <p> Redirecting in 5 seconds, if it doesn't work click <a href="<?php echo base_url();?>/index.php/login">here</a></p>
         </div>
     </body>
 </html>

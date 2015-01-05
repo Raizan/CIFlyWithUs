@@ -2,12 +2,7 @@
     <head>
         <title> Redirecting... </title>
         <script>
-            setTimeout("location.href = '
-            <?php
-                $url = $this->session->userdata('page_url');
-                echo $url;
-            ?>
-            ';", 5000);
+            setTimeout("location.href = '<?php echo base_url();?>/index.php/search';", 5000);
         </script>
     </head>
     <body>
@@ -20,7 +15,7 @@
                     echo '<img src="'.base_url().'assets/images/failed.jpg">';
                 }
             ?>
-            <p> Redirecting in 5 seconds, if it doesn't work click <a href="<?php echo $url; ?>">here</a></p>
+            <p> Redirecting in 5 seconds, if it doesn't work click <a href="<?php echo base_url();?>/index.php/search">here</a></p>
         </div>
     </body>
 </html>

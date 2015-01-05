@@ -14,7 +14,6 @@ class Search extends CI_Controller {
     }
 
     function exec(){
-        $this->session->set_userdata('page_url',  current_url());
 
         $bandara_from = $this->input->get('bandara_from');
         $bandara_to = $this->input->get('bandara_to');
