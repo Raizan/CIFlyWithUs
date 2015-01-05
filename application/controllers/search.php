@@ -32,7 +32,7 @@ class Search extends CI_Controller {
             $date_go = $this->input->get('date_go');
             $adult = $this->input->get('adult');
             $children = $this->input->get('children');
-            $infant = $this->input->get('infant');
+            $infant = $this->input->get('baby');
 
             if ($adult == ""){
                 $adult = 0;

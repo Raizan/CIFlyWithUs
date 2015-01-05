@@ -38,75 +38,105 @@
         <div class="center">
             <form class="form-horizontal" method="post" action="<?php echo base_url(); ?>index.php/book/exec">
                 <fieldset>
+                    <!-- Form Name -->
+                    <h3 class="font title-font"><b class="font-yellow">Detail</b> Reservasi</h3>
                     <?php
                         $adult = $this->session->userdata('adult');
                         $children = $this->session->userdata('children');
                         $infant = $this->session->userdata('infant');
-                        for($i = 0; $i < $adult; $i = $i + 1){
-                            echo "for adult";
-                        }
-                        for($i = 0; $i < $children; $i = $i + 1){
-                            echo "for children";
-                        }
-                        for($i = 0; $i < $infant; $i = $i + 1){
-                            echo "for infant";
+                        $adult_gauge = 0;
+                        $children_gauge = 0;
+                        $infant_gauge = 0;
+                        $total = $adult + $children + $infant;
+                        for($i = 1; $i <= $total; $i = $i + 1){
+                            if ($adult_gauge < $adult){
+                                echo '
+                                    <div>
+                                    For Adult
+                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+
+
+                                    <!-- Text input-->
+                                    <div class="control-group">
+                                        <label class="control-label" for="nama_penumpang_'.$i.'">Nama Penumpang</label>
+                                        <div class="controls">
+                                            <input id="nama_penumpang_'.$i.'" name="nama_penumpang_'.$i.'" type="text" placeholder="" class="input-xlarge">
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="control-group">
+                                        <label class="control-label" for="nomor_identitas_'.$i.'">Nomor Identitas</label>
+                                        <div class="controls">
+                                            <input id="nomor_identitas_'.$i.'" name="nomor_identitas_'.$i.'" type="text" placeholder="" class="input-xlarge">
+
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="adult" name="age">
+                                    <div>
+                                ';
+                                $adult_gauge = $adult_gauge + 1;
+                            }
+                            else if ($children_gauge < $children){
+                                echo '
+                                    <div>
+                                    For Children
+                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+
+
+                                    <!-- Text input-->
+                                    <div class="control-group">
+                                        <label class="control-label" for="nama_penumpang_'.$i.'">Nama Penumpang</label>
+                                        <div class="controls">
+                                            <input id="nama_penumpang_'.$i.'" name="nama_penumpang_'.$i.'" type="text" placeholder="" class="input-xlarge">
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="control-group">
+                                        <label class="control-label" for="nomor_identitas_'.$i.'">Nomor Identitas</label>
+                                        <div class="controls">
+                                            <input id="nomor_identitas_'.$i.'" name="nomor_identitas_'.$i.'" type="text" placeholder="" class="input-xlarge">
+
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="children" name="age">
+                                    </div>
+                                ';
+                                $children_gauge = $children_gauge + 1;
+                            }
+                            else if ($infant_gauge < $infant){
+                                echo '
+                                    <div>
+                                    For Infant
+                                    <input type="hidden" name="id_jadwal"'.'value="'.$id_jadwal.'">
+
+                                    <!-- Text input-->
+                                    <div class="control-group">
+                                        <label class="control-label" for="nama_penumpang_'.$i.'">Nama Penumpang</label>
+                                        <div class="controls">
+                                            <input id="nama_penumpang_'.$i.'" name="nama_penumpang_'.$i.'" type="text" placeholder="" class="input-xlarge">
+
+                                        </div>
+                                    </div>
+
+                                    <!-- Text input-->
+                                    <div class="control-group">
+                                        <label class="control-label" for="nomor_identitas_'.$i.'">Nomor Identitas</label>
+                                        <div class="controls">
+                                            <input id="nomor_identitas_'.$i.'" name="nomor_identitas_'.$i.'" type="text" placeholder="" class="input-xlarge">
+
+                                        </div>
+                                    </div>
+                                    <input type="hidden" value="infant" name="age">
+                                    </div>
+                                ';
+                                $infant_gauge = $infant_gauge + 1;
+                            }
                         }
                     ?>
-                    <!-- Form Name -->
-                    <h3 class="font title-font"><b class="font-yellow">Detail</b> Reservasi</h3>
-
-                    <!-- Multiple Radios -->
-                    <div class="control-group">
-                        <input type="hidden" name="id_jadwal" value="<?php echo $id_jadwal; ?>"/>
-                        <label class="control-label" for="radios">Tiket ini diperuntukkan untuk Anda?</label>
-                        <div class="controls">
-                            <label class="radio" for="radios-0">
-                                <input type="radio" name="for_myself" id="radios-0" value="Ya" checked="checked">
-                                Ya
-                            </label>
-                            <label class="radio" for="radios-1">
-                                <input type="radio" name="for_myself" id="radios-1" value="Tidak">
-                                Tidak
-                            </label>
-                        </div>
-                    </div>
-                    <p> Jika Anda menjawab tidak, isi formulir di bawah ini</p>
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="nama_penumpang">Nama Penumpang</label>
-                        <div class="controls">
-                            <input id="nama_penumpang" name="nama_penumpang" type="text" placeholder="" class="input-xlarge">
-
-                        </div>
-                    </div>
-
-                    <!-- Text input-->
-                    <div class="control-group">
-                        <label class="control-label" for="nomor_identitas">Nomor Identitas</label>
-                        <div class="controls">
-                            <input id="nomor_identitas" name="nomor_identitas" type="text" placeholder="" class="input-xlarge">
-
-                        </div>
-                    </div>
-
-                    <!-- Multiple Radios -->
-                    <div class="control-group">
-                        <label class="control-label" for="age">Kategori Penumpang</label>
-                        <div class="controls">
-                            <label class="radio" for="age-0">
-                                <input type="radio" name="age" id="age-0" value="Dewasa">
-                                Dewasa
-                            </label>
-                            <label class="radio" for="age-1">
-                                <input type="radio" name="age" id="age-1" value="Children">
-                                Children
-                            </label>
-                            <label class="radio" for="age-2">
-                                <input type="radio" name="age" id="age-2" value="Infant">
-                                Infant
-                            </label>
-                        </div>
-                    </div>
 
                     <!-- Button -->
                     <div class="control-group">
