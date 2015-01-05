@@ -20,7 +20,7 @@ class Reservasi extends CI_Model {
         }
     }
 
-    function create($id_jadwal, $nama_penumpang=null, $nomor_identitas=null, $age=null){
+    function create($id_jadwal, $nama_penumpang, $nomor_identitas, $age){
         $id_reservasi = $this->session->userdata('id_reservasi');
 
         // Asumsi penumpang dewasa, prad lagi buat fungsi perhitungannya

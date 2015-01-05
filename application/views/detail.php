@@ -48,7 +48,7 @@
                         $children_gauge = 0;
                         $infant_gauge = 0;
                         $total = $adult + $children + $infant;
-                        for($i = 1; $i <= $total; $i = $i + 1){
+                        for($i = 0; $i < $total; $i = $i + 1){
                             if ($adult_gauge < $adult){
                                 echo '
                                     <div>
@@ -73,7 +73,7 @@
 
                                         </div>
                                     </div>
-                                    <input type="hidden" value="adult" name="age">
+                                    <input type="hidden" value="adult" name="age'.$i.'">
                                     <div>
                                 ';
                                 $adult_gauge = $adult_gauge + 1;
@@ -102,7 +102,7 @@
 
                                         </div>
                                     </div>
-                                    <input type="hidden" value="children" name="age">
+                                    <input type="hidden" value="children" name="age'.$i.'">
                                     </div>
                                 ';
                                 $children_gauge = $children_gauge + 1;
@@ -130,7 +130,7 @@
 
                                         </div>
                                     </div>
-                                    <input type="hidden" value="infant" name="age">
+                                    <input type="hidden" value="infant" name="age'.$i.'">
                                     </div>
                                 ';
                                 $infant_gauge = $infant_gauge + 1;

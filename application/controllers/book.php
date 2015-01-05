@@ -16,18 +16,34 @@ class Book extends CI_Controller {
     }
 
     function exec(){
-        $id_jadwal = $this->input->post('id_jadwal');
-        $nama_penumpang = $this->input->post('nama_penumpang');
-        $nomor_identitas = $this->input->post('nomor_identitas');
-        $age = $this->input->post('age');
-
-        // loop sebanyak form
-        $flag = $this->reservasi->create($id_jadwal, $nama_penumpang, $nomor_identitas, $age);
-
-        if ($flag == false){
-            $this->session->set_flashdata('pesan', 'Tiket habis.');
-            redirect('search');
+        $data = $this->input->post();
+//        $id_jadwal = $this->input->post('id_jadwal');
+//        $nama_penumpang = $this->input->post('nama_penumpang');
+//        $nomor_identitas = $this->input->post('nomor_identitas');
+//        $age = $this->input->post('age');
+        $flag = null;
+        $temp = null;
+        $i = 0;
+        foreach ($data as $x){
+            $temp[$i] = $x;
+            $i = $i + 1;
         }
+
+        $id_jadwal = $temp[0];
+        for ($i = 0; $i < sizeof($temp); $i = $i + 4){
+            
+            $nama_penumpang = $temp[$i];
+            $nomor_identitas = $temp[$i + 1];
+            $age = $temp[$i + 2];
+
+            $flag = $this->reservasi->create($id_jadwal, $nama_penumpang, $nomor_identitas, $age);
+
+            if ($flag == false){
+                $this->session->set_flashdata('pesan', 'Tiket habis.');
+                redirect('search');
+            }
+        }
+
         $this->session->unset_userdata('adult');
         $this->session->unset_userdata('children');
         $this->session->unset_userdata('infant');
