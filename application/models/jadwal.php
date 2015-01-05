@@ -28,6 +28,7 @@ class Jadwal extends CI_Model {
         else if ($age == "infant"){
             $age = 1;
         }
+        echo $id_jadwal, $age;
         $sql = 'SELECT calculateharga('.$age.',\''.$id_jadwal.'\')';
         $query = $this->db->query($sql);
         if ($query->num_rows() > 0){
