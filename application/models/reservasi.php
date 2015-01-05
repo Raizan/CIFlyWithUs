@@ -32,7 +32,8 @@ class Reservasi extends CI_Model {
             return false;
         }
 
-        $harga = $this->jadwal->get_harga($id_jadwal);
+
+        $harga = $this->jadwal->get_harga($id_jadwal, $age);
         if ($harga != null){
             $data = array(
                 'id_reservasi' => $id_reservasi ,

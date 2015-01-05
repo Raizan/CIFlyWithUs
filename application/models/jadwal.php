@@ -6,20 +6,39 @@ class Jadwal extends CI_Model {
         parent::__construct();
     }
 
-    function get_harga($id_jadwal){
-        $query = $this->db->get_where('jadwal',
-            array(
-                'id_jadwal' => $id_jadwal
-            ));
-
+    function get_harga($id_jadwal, $age){
+//        $query = $this->db->get_where('jadwal',
+//            array(
+//                'id_jadwal' => $id_jadwal
+//            ));
+//
+//        if ($query->num_rows() > 0){
+//            $row = $query->row();
+//            return $row->harga_satuan;
+//        }
+//        else {
+//            return null;
+//        }
+        if ($age == "adult"){
+            $age = 29;
+        }
+        else if ($age == "children"){
+            $age = 10;
+        }
+        else if ($age == "infant"){
+            $age = 1;
+        }
+        $sql = 'SELECT calculateharga('.$age.',\''.$id_jadwal.'\')';
+        $query = $this->db->query($sql);
         if ($query->num_rows() > 0){
             $row = $query->row();
-            return $row->harga_satuan;
+            return $row->calculateharga;
         }
         else {
             return null;
         }
     }
+
 
     function get_jadwal($bandara_from, $bandara_to, $date_go){
         $date_go_1 = $date_go.' 00:00:00';

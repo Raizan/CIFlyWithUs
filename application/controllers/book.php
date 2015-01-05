@@ -30,11 +30,10 @@ class Book extends CI_Controller {
         }
 
         $id_jadwal = $temp[0];
-        for ($i = 0; $i < sizeof($temp); $i = $i + 4){
-            
-            $nama_penumpang = $temp[$i];
-            $nomor_identitas = $temp[$i + 1];
-            $age = $temp[$i + 2];
+        for ($i = 0; $i < sizeof($temp) - 1; $i = $i + 4){
+            $nama_penumpang = $temp[$i+1];
+            $nomor_identitas = $temp[$i + 2];
+            $age = $temp[$i + 3];
 
             $flag = $this->reservasi->create($id_jadwal, $nama_penumpang, $nomor_identitas, $age);
 
